@@ -93,7 +93,7 @@
 <a href="index.php"><img src="images/logo.png" alt="Realestate"></a>
               <div class="pull-right">
               <?
-                session_start();
+                //session_start();
                 if(isset($_SESSION['email'])){
                   $user_email=$_SESSION["email"];
                   echo "안녕하세요. "."$user_email"."님";

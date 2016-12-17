@@ -41,8 +41,8 @@ $total=mysqli_num_rows($result);
  // If result matched $myusername and $mypassword, table row must be 1 row
 if($total==1)  //count가 1이라는 것은 아이디와 패스워드가 일치하는 db가 하나 있음을 의미합니다. 
 {
-	session_start();   //세션의 시작
-	$_SESSION['email'] = $email;
+	session_start();   
+	$_SESSION['email'] = $email; //세션 만듬
 	
 	echo "환영합니다 관리자님!^^"; 
 	echo "<meta http-equiv='refresh' content='2; url=index.php'>";
