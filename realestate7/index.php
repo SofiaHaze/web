@@ -1,7 +1,8 @@
-<?
+<?php
   include'header.php';
   require_once("db_connect.php");
 ?>
+
 <div class="" id="main-content">
   <div id="slider" class="sl-slider-wrapper">
     <div class="sl-slider">
