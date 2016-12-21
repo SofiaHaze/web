@@ -234,34 +234,32 @@ while($row=$result->fetch_assoc()){
           </ol>
           <!-- Carousel items -->
           <div class="carousel-inner">
+
+                      <?php
+
+  $sql ="select * from pdata where hotp=1";
+
+  $result = mysqli_query($con,$sql);
+  while($row=mysqli_fetch_array($result)){
+?>
             <div class="item active">
+
+
               <div class="row">
                 <div class="col-lg-4">
-                  <img src="images/properties/1.jpg" class="img-responsive" alt="properties"/>
+                  <img src="<?php echo $row["imgaddr"];?>" class="img-responsive img-circle" alt="properties"/>
                 </div>
                 <div class="col-lg-8">
-                  <h5><a href="property-detail.php">푸르지오 3차아파트 분양</a></h5>
-                  <p class="price">
-                    400,000원
-                  </p>
+                  <h5><?php
+      echo "<a href="."property-detail.php?searchP=".$row["id"].">";
+      echo $row["name"];?></a></h5>
+                  <h6> <?php echo $row["proptype"]." ".$row["selltype"]; ?> </h6>
+      <p class="price"><?php echo $row["price"];?>원</p> </div>
                   <a href="property-detail.php" class="more">상세정보 보기</a>
-                </div>
+                  </div><?php } ?>
               </div>
             </div>
-            <div class="item">
-              <div class="row">
-                <div class="col-lg-4">
-                  <img src="images/properties/2.jpg" class="img-responsive" alt="properties"/>
-                </div>
-                <div class="col-lg-8">
-                  <h5><a href="property-detail.php">파주 힐스테이트 A동 1504호</a></h5>
-                  <p class="price">
-                    2,300,000원
-                  </p>
-                  <a href="property-detail.php" class="more">상세정보 보기</a>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
